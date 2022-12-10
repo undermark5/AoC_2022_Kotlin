@@ -40,3 +40,7 @@ operator fun <R> (() -> R).times(paddingSize: Int): List<R> {
 operator fun IntRange.contains(intRange: IntRange): Boolean {
     return first <= intRange.first && intRange.last <= last
 }
+
+operator fun <E> List<MutableList<E>>.set(pair: Pair<Int,Int>, value: E) {
+    this[pair.first][pair.second] = value
+}
