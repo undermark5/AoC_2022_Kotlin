@@ -44,3 +44,12 @@ operator fun IntRange.contains(intRange: IntRange): Boolean {
 operator fun <E> List<MutableList<E>>.set(pair: Pair<Int,Int>, value: E) {
     this[pair.first][pair.second] = value
 }
+
+operator fun <E> List<List<E>>.get(pair: Pair<Int, Int>): E {
+    return this[pair.first][pair.second]
+}
+
+open class Node<E>(val value: E) {
+    var visited = false
+    var neighbors = listOf<Node<E>>()
+}
