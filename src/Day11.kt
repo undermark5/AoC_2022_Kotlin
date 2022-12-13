@@ -25,10 +25,10 @@ data class Monkey(
         }.also { _items.clear() }
     }
 
-    fun takeTurnPart2(): List<Pair<Int, Long>> {
+    fun takeTurnPart2(modulus: Int): List<Pair<Int, Long>> {
         inspectionCount += _items.size
-        return _items.map{ operation(it, testValue.toLong()) }.map {
-            if (it == 0L ) {
+        return _items.map{ operation(it, modulus.toLong()) }.map {
+            if (it % testValue == 0L ) {
                 successPartner to it
             } else {
                 failPartner to it
@@ -144,9 +144,10 @@ fun main() {
                 failure?.value?.toInt() ?: 0
             )
         }
+        val lcm = monkeys.map { it.testValue }.reduce(Int::times)
         for (i in 0 until 10000) {
             for (monkey in monkeys) {
-                val itemsThrown = monkey.takeTurnPart2()
+                val itemsThrown = monkey.takeTurnPart2(lcm)
                 itemsThrown.forEach {
                     monkeys[it.first].catchItem(it.second)
                 }
