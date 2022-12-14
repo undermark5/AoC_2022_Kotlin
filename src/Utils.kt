@@ -49,7 +49,19 @@ operator fun <E> List<List<E>>.get(pair: Pair<Int, Int>): E {
     return this[pair.first][pair.second]
 }
 
+fun <E> List<List<E>>.getOrNull(pair:Pair<Int,Int>): E? {
+    return this.getOrNull(pair.first)?.getOrNull(pair.second)
+}
+
 open class Node<E>(val value: E) {
     var visited = false
     var neighbors = listOf<Node<E>>()
 }
+
+
+fun <E> List<E>.toPair():Pair<E,E> {
+    return first() to last()
+}
+
+val <A, B> Pair<A, B>.reversed: Pair<B, A>
+    get() = second to first
