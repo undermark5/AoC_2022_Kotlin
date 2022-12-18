@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/day%20📅-17-blue) ![](https://img.shields.io/badge/stars%20⭐-28-yellow)
+![](https://img.shields.io/badge/day%20📅-18-blue) ![](https://img.shields.io/badge/stars%20⭐-28-yellow)
 # AoC_2022_Kotlin
 
 Welcome to the Advent of Code[^aoc] Kotlin project created by [undermark5][github] using the [Advent of Code Kotlin Template][template] delivered by JetBrains.
